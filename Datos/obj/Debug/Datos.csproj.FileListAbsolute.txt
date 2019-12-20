@@ -1,0 +1,14 @@
+F:\DescargaExcel\Datos\bin\Debug\Datos.dll.config
+F:\DescargaExcel\Datos\bin\Debug\Datos.dll
+F:\DescargaExcel\Datos\bin\Debug\Datos.pdb
+F:\DescargaExcel\Datos\bin\Debug\EntityFramework.dll
+F:\DescargaExcel\Datos\bin\Debug\EntityFramework.SqlServer.dll
+F:\DescargaExcel\Datos\bin\Debug\Modelo.dll
+F:\DescargaExcel\Datos\bin\Debug\Modelo.pdb
+F:\DescargaExcel\Datos\bin\Debug\EntityFramework.xml
+F:\DescargaExcel\Datos\bin\Debug\EntityFramework.SqlServer.xml
+F:\DescargaExcel\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+F:\DescargaExcel\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+F:\DescargaExcel\Datos\obj\Debug\Datos.csproj.CopyComplete
+F:\DescargaExcel\Datos\obj\Debug\Datos.dll
+F:\DescargaExcel\Datos\obj\Debug\Datos.pdb

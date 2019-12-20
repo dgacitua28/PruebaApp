@@ -1,0 +1,5 @@
+F:\DescargaExcel\Modelo\bin\Debug\Modelo.dll
+F:\DescargaExcel\Modelo\bin\Debug\Modelo.pdb
+F:\DescargaExcel\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+F:\DescargaExcel\Modelo\obj\Debug\Modelo.dll
+F:\DescargaExcel\Modelo\obj\Debug\Modelo.pdb

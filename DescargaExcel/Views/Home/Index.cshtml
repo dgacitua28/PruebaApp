@@ -1,0 +1,93 @@
+﻿@using Kendo.Mvc.UI
+@{
+    ViewBag.Title = "Home Page";
+}
+<link href="~/Content/kendo/all.css" rel="stylesheet" />
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12" style="padding-top: 10px;">
+        @(Html.Kendo().Grid<DescargaExcel.Models.PersonaViewModel>()
+        .Name("grid").Columns(
+          columns =>
+          {
+              columns.Bound(c => c.PersonaId).Width(150).Title("Id");
+              columns.Bound(c => c.Nombre).Width(150).Title("Nombre");
+              columns.Bound(c => c.Apellido).Width(150).Title("Apellido");
+              columns.Bound(c => c.Sexo).Width(150).Title("Sexo");
+              columns.Bound(c => c.Opciones).Width(150).Title("Opcion");
+          })
+        .Pageable(paging => paging
+                 .ButtonCount(10)
+                 .Refresh(true)
+                 .Messages(p => p.ItemsPerPage("registros por página")
+                 .First("Ir a primera página")
+                 .Previous("Ir a página anterior")
+                 .Next("Página siguiente")
+                 .Last("Ir a última página")
+                 .Refresh("Refrescar")
+                 .Display("{0} - {1} de {2} elementos")
+                 .Page("página")
+                 .AllPages("Todas Las Páginas")
+                 .MorePages("Más Páginas")
+                 .Empty("No existen Registros")
+                 .Of("de {0}")
+                 )
+               )
+              .Sortable()
+              .ToolBar(tools =>
+              {
+              tools.Template(@<text>
+                            <button class="k-button k-button-icontext k-grid-excel" type="button" style="background-color:darkgreen; color:white;"><span class="k-icon k-i-excel"></span>Exportar Excel</button>
+            </text>);
+})
+
+.Scrollable(scrollable => scrollable.Height("auto"))
+.Resizable(resizable => resizable.Columns(true))
+.EnableCustomBinding(true)
+.Excel(excel => excel
+.FileName("Listado_De_Administrador.xlsx")
+.AllPages(true)
+.Filterable(false)
+//.ProxyURL(Url.Action("Excel_Export_Save", "Home"))
+)
+.DataSource(ds => ds.Ajax()
+.PageSize(5)
+.ServerOperation(true)
+.Read(a => a.Action("List", "Home"))
+.Model(m =>
+{
+m.Id(p => p.PersonaId);
+m.Field(p => p.PersonaId);
+})
+)
+        )
+    </div>
+</div>
